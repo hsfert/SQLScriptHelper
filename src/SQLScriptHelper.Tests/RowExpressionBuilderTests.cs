@@ -28,7 +28,7 @@ namespace SQLScriptHelper.Tests
                 "PartnerAddress"
             };
 
-            Func<Action<Person, StringBuilder>> action = () => _sut.Build(columnNamesWithAddress); 
+            Func<Action<Person, StringBuilder>> action = () => _sut.Build(columnNamesWithAddress);
 
             action.Should().Throws<Exception>();
 

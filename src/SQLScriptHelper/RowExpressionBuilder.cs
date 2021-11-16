@@ -9,7 +9,7 @@ namespace SQLScriptHelper
 	/// <summary>
 	/// Build a function from the expression tree that parses an object to a string format according to the columns required and the data type of the attributes.
 	/// </summary>
-	public class RowExpressionBuilder<T> : IRowExpressionBuilder<T> where T : class
+	public class RowExpressionBuilder<T> where T : class
 	{
 		public RowExpressionBuilder()
 		{
@@ -43,7 +43,7 @@ namespace SQLScriptHelper
 			{
 				if (i > 0)
 				{
-					expressions.Add(Expression.Call(sql, appendComma));
+					expressions.Add(Expression.Call(sql, appendComma, comma));
 				}
 				var property = properties[i];
 				var propertyType = property.PropertyType;
